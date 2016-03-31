@@ -8,3 +8,5 @@ DECLARE @OrderTotalsByYear AS dbo.OrderTotalsByYear;
 
 
 //table type like this can be used to reduce the amount of code and as a reference to work or perserve a table definition 
+
+//Types, User-Defined Table Types
