@@ -2,8 +2,8 @@ SELECT
    YOD(O.orderDate) AS orderYear,
    SUM(OD.qty) AS quantity
 INTO dbo.#MyOrderSalesTotalByYear   //local temporary tables prefixed with hash
+                                    //local temporary table is visible only to that session created
 
-//local table is visible only to that session created
 FROM Sales.Orders AS O   //entities 
 JOIN Sales.OrderDetails AS OD
 ON OD.orderID = O.orderID
