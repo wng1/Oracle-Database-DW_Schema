@@ -20,3 +20,5 @@ BEGIN
   
   SELECT EmpID, FirstName, LastName, dbo.calculateAge(DOB, CURRENT_TIMESTAMP) AS Age
   FROM HR.Employees
+  
+  //use the dob and calculate the age by the current date
