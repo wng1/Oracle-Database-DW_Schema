@@ -24,4 +24,4 @@ BEGIN
   INNER JOIN Production.ComponentPriceOfMaterial p
   ON p.ProdID = cte.CID
   WHERE @CheckDate >=p.ProductDate
-)
+  )
