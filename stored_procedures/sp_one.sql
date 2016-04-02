@@ -1,6 +1,6 @@
 CREATE PROCEDURE [dbo].[getComponentPriceOfMaterials]
 
-@PID int,
+@EntryProductID int,
 @CheckDate DATETIME
 
 AS 
@@ -15,3 +15,5 @@ BEGIN
   INNER JOIN Production.Product pr
   ON p.ProdID = pr.PID
   
+  WHERE p.ProdID = @EntryProductID  //cross reference column to the input parameter
+  AND @CheckDate >=p.ProductDate //check the above product from a certain date  2016-04-1 00:00:00.000
