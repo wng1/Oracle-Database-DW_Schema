@@ -17,3 +17,10 @@ BEGIN
   
   WHERE p.ProdID = @EntryProductID  //cross reference column to the input parameter
   AND @CheckDate >=p.ProductDate //check the above product from a certain date  2016-04-1 00:00:00.000
+  UNION ALL
+  
+  SELECT p.ProdID, p.CID, p.CDescription, pr.CCost, p.PerCQty, pr.ListPrice)
+  FROM [CPOM_cte] cte
+  INNER JOIN Production.ComponentPriceOfMaterial p
+  ON p.ProdID = cte.CID
+  WHERE @CheckDate >=p.ProductDate
