@@ -22,3 +22,9 @@ SELECT * ALL FROM Sales.SalesDetailProduct
  FROM Sales.SalesProduct WHERE PID = @PID
  
  -- run a handling
+
+IF (@StockAvailability < @SellQuantity)
+BEGIN 
+RAISEERROR("The sell quantity is higher than the available stock. Please try again", 16,1)  
+-- ERROR_SEVERITY    GENERAL 16
+END
