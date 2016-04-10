@@ -36,4 +36,6 @@ BEGIN TRANSACTION
 
 UPDATE Product.ProductDetails SET QuantityAvailable = (QuantityAvailable - @SellQuantity)
 -- Deduct the requested amount from the products table
+WHERE PID = @PID
 
+-- Now to assign an unique order transaction id
