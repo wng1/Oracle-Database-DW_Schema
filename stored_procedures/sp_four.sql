@@ -46,6 +46,7 @@ END TRY
 
 BEGIN CATCH 
 ROLLBACK TRANSACTION
-  END CATCH
+-- Include the raiseError message to verify this step has been passed if the transaction cannot be committed
+END CATCH
  END
 END
