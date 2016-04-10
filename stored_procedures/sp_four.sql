@@ -32,6 +32,7 @@ END
 ELSE
 
 BEGIN
+BEGIN TRY
 BEGIN TRANSACTION 
 
 UPDATE Product.ProductDetails SET QuantityAvailable = (QuantityAvailable - @SellQuantity)
@@ -39,3 +40,12 @@ UPDATE Product.ProductDetails SET QuantityAvailable = (QuantityAvailable - @Sell
 WHERE PID = @PID
 
 -- Now to assign an unique order transaction id
+COMMIT TRANSACTION
+
+END TRY
+
+BEGIN CATCH 
+ROLLBACK TRANSACTION
+  END CATCH
+ END
+END
