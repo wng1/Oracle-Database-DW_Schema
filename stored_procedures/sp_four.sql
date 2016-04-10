@@ -28,3 +28,12 @@ BEGIN
 RAISEERROR("The sell quantity is higher than the available stock. Please try again", 16,1)  
 -- ERROR_SEVERITY    GENERAL 16
 END
+
+ELSE
+
+BEGIN
+BEGIN TRANSACTION 
+
+UPDATE Product.ProductDetails SET QuantityAvailable = (QuantityAvailable - @SellQuantity)
+-- Deduct the requested amount from the products table
+
