@@ -10,4 +10,4 @@ Address3 varchar(50),
 
 //Small quick sample
 
-//larger scripts contains commits and rollback
+//larger scripts contains commits and rollback.
