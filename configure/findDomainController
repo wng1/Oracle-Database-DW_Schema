@@ -1,0 +1,8 @@
+SELECT
+SR.ResourceID,
+SR.ResourceType,
+SR.Name,
+SR.ResourceIdentifier
+
+FROM SMS_R_System AS SR
+WHERE SMS_R_System.PrimaryGroupID = "1"
